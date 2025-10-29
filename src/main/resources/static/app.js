@@ -126,7 +126,7 @@ function genId() { return 's-' + Math.random().toString(36).substr(2,9); }
 sessionId = genId();
 
 // ✅ Change this to your actual Render backend URL (no trailing slash)
-const BACKEND_URL = "https://watch-together-mysql-2.onrender.com/";
+const BACKEND_URL = "https://watch-together-mysql-2.onrender.com";
 
 function connectAndSubscribe(roomId, username, avatarEmoji) {
   // ✅ Full backend WebSocket endpoint
