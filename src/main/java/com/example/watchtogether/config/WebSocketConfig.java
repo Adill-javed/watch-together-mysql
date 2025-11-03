@@ -16,15 +16,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         config.setApplicationDestinationPrefixes("/app");
     }
 
-//    @Override
-//    public void registerStompEndpoints(StompEndpointRegistry registry) {
-//        registry.addEndpoint("/ws").setAllowedOriginPatterns("*").withSockJS();
-//    }
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws")
-                .setAllowedOrigins("https://watch-together-mysql-2.onrender.com/")
+                // ⚠️ Use without trailing slash
+                // ✅ Allow all frontend URLs for now
+                .setAllowedOriginPatterns("*")
                 .withSockJS();
     }
-
 }
